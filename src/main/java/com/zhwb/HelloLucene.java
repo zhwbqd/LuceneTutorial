@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.text.ParseException;
 
 /**
+ * 搜索程序的典型组件, Lucene负责括号中的部分
+ *
+ * Raw Content-->Acquire Content-->(Build Document-->Analyze Document-->Index Document-->Index<--QueryBuild Query)
+ *
  * @author jack.zhang
  * @since 2015/8/31
  */
@@ -35,6 +39,8 @@ public class HelloLucene {
         addDoc(w, "Managing Gigabytes", "55063554A");
         addDoc(w, "The Art of Computer Science", "9900333X");
         w.close();
+
+        /***************************build index end***********************/
 
         // 2. query
         String querystr = args.length > 0 ? args[0] : "lucene";
